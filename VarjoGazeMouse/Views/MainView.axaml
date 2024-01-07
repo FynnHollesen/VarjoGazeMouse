@@ -1,0 +1,48 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:VarjoGazeMouse.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="VarjoGazeMouse.Views.MainView"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+    <vm:MainViewModel />
+  </Design.DataContext>
+
+	<StackPanel Margin="10" Spacing="10">
+
+		<StackPanel Spacing="10" VerticalAlignment="Top" Orientation="Horizontal">
+			<Button VerticalAlignment="Center" Command="{Binding RefreshVarjoGazeStatusCommand}">Refresh</Button>
+			<TextBlock VerticalAlignment="Center" Text="GazeStatus: "/>
+			<TextBlock VerticalAlignment="Center" Text="{Binding VarjoGazeStatus}"/>
+		</StackPanel>
+
+		<StackPanel Spacing="10" VerticalAlignment="Top" Orientation="Horizontal">
+			<Button VerticalAlignment="Center" Command="{Binding RefreshVarjoGazeCommand}">Refresh</Button>
+			<TextBlock VerticalAlignment="Center" Text="GazeData: "/>
+			<TextBlock VerticalAlignment="Center" Text="{Binding VarjoGaze}"/>
+		</StackPanel>
+
+		<StackPanel Spacing="10" VerticalAlignment="Top" Orientation="Horizontal">
+			<Button VerticalAlignment="Center" Command="{Binding RequestGazeCalibrationCommand}">Calibrate</Button>
+		</StackPanel>
+
+		<ToggleSwitch IsChecked="{Binding VarjoGazeContinuousRefresh}" Command="{Binding ToggleVarjoGazeContinuousRefreshCommand}"></ToggleSwitch>
+
+		<StackPanel Spacing="10" VerticalAlignment="Top" Orientation="Horizontal">
+			<TextBlock VerticalAlignment="Center" Text="GazeOrigin: "/>
+			<TextBlock VerticalAlignment="Center" Text="{Binding VarjoGazeOrigin[0]}"/>
+			<TextBlock VerticalAlignment="Center" Text="{Binding VarjoGazeOrigin[1]}"/>
+			<TextBlock VerticalAlignment="Center" Text="{Binding VarjoGazeOrigin[2]}"/>
+		</StackPanel>
+
+		<StackPanel Spacing="10" VerticalAlignment="Top" Orientation="Horizontal">
+			<TextBlock VerticalAlignment="Center" Text="GazeForward: "/>
+			<TextBlock VerticalAlignment="Center" Text="{Binding VarjoGazeForward[0]}"/>
+			<TextBlock VerticalAlignment="Center" Text="{Binding VarjoGazeForward[1]}"/>
+			<TextBlock VerticalAlignment="Center" Text="{Binding VarjoGazeForward[2]}"/>
+		</StackPanel>
+
+	</StackPanel>
+</UserControl>
