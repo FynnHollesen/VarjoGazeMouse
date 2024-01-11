@@ -6,7 +6,10 @@
         xmlns:views="clr-namespace:VarjoGazeMouse.Views"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="VarjoGazeMouse.Views.MainWindow"
+		Background="#171C2C"
         Icon="/Assets/logo.ico"
-        Title="VarjoGazeMouse">
-        <views:MainView />
+        Title="VarjoGazeMouse"
+		Width="800"
+		Height="800">
+	<views:MainView />
 </Window>
